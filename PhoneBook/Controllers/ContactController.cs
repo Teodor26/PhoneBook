@@ -42,7 +42,7 @@ namespace PhoneBook.Controllers
                 db.Contacts.Remove(contact);
                 db.SaveChanges();
             }
-           
+            
             return RedirectToAction("Index");
 
         }

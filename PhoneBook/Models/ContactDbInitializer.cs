@@ -14,7 +14,8 @@ namespace PhoneBook.Models
             db.Contacts.Add(new Contact { FirstName = "Alex", LastName = "Medved", Position = "student" });
             db.Contacts.Add(new Contact { FirstName = "John", LastName = "Smith", Position = "cook" });
             db.Contacts.Add(new Contact { FirstName = "Jack", LastName = "Williams", Position = "Senior developer" });
-            
+
+            db.Groups.Add(new Groups { Name = "Колеги"});
 
             base.Seed(db);
         }

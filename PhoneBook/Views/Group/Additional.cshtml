@@ -1,4 +1,4 @@
-﻿@model PhoneBook.Models.Contact
+﻿@model PhoneBook.Models.Groups
 @{
     ViewBag.Title = "Add";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,9 +6,9 @@
 
 <h2>Add</h2>
 
-@using (Html.BeginForm("Add", "Contact", FormMethod.Post))
+@using (Html.BeginForm("Additional", "Group", FormMethod.Post))
 {
-    @Html.Partial("Partials/_DisplayTextBox")
+    @Html.Partial("Partials/_groups")
 
     <input type="submit" name="Добавить" />
 }
