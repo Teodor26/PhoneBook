@@ -22,16 +22,20 @@
                 <td></td>
             </tr>
             @foreach (var contact in Model)
-            { 
+            {
                 <tr>
                     <td><p>@contact.FirstName</p></td>
                     <td><p>@contact.LastName</p></td>
-                    <td><p>@contact.Position @Html.ActionLink("Удалить","Delete",
-                                            routeValues: new { id = contact.Id })</p></td>                    
+                    <td>
+                        <p>
+                            @contact.Position @Html.ActionLink("Редактировать","Update", routeValues: new { id = contact.Id })
+                            @Html.ActionLink("Удалить","Delete",routeValues: new { id = contact.Id })
+                        </p>
+                    </td>
                 </tr>
             }
         </table>
     </div>
-    @Html.ActionLink("Добавить","Add","Contact")
+    @Html.ActionLink("Добавить", "Add", "Contact")
 </body>
 </html>

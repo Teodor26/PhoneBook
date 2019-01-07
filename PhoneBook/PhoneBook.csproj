@@ -133,12 +133,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ContactDbInitializer.cs" />
+    <Compile Include="Models\Groups.cs" />
     <Compile Include="Models\Phone.cs" />
     <Compile Include="Models\ContactContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,9 +183,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Contact\Add.cshtml" />
+    <Content Include="Views\Contact\Update.cshtml" />
+    <Content Include="Views\Contact\Partials\_DisplayTextBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Group\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

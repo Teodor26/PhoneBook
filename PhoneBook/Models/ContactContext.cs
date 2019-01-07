@@ -11,5 +11,7 @@ namespace PhoneBook.Models
         public DbSet<Contact> Contacts { get; set; }
 
         public DbSet<Phone> Phones { get; set; }
+
+        public DbSet<Groups> Groups { get; set; }
     }
 }

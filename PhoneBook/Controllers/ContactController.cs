@@ -47,6 +47,22 @@ namespace PhoneBook.Controllers
 
         }
 
-        
+        public ActionResult Update()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Update(int? Id,Contact model)
+        {
+           
+            Contact contact = db.Contacts.Find(Id);
+            db.Contacts.Remove(contact);
+            db.Contacts.Add(model);
+            
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+           
+        }
     }
 }
