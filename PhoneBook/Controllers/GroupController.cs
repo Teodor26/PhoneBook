@@ -25,6 +25,9 @@ namespace PhoneBook.Controllers
         [HttpPost]
         public ActionResult Additional(Groups group)
         {
+            if (!ModelState.IsValid)
+                return View(group);
+
             db.Groups.Add(group);
             db.SaveChanges();
             return RedirectToAction("List");            
