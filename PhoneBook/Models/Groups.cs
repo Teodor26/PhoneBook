@@ -14,6 +14,7 @@ namespace PhoneBook.Models
         [Required]
         [Display(Name = "Name")]
         [NonNumeric(ErrorMessage = "Не может начинаться с данного символа")]
+        [Reverse(ErrorMessage = "Не может заканчиваться на данный символ")]
         public string Name { get; set; }
     }
 }

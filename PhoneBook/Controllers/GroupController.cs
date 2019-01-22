@@ -56,7 +56,10 @@ namespace PhoneBook.Controllers
         [HttpPost]
         public ActionResult Update(int? Id, Groups model)
         {
-
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
             Groups group = db.Groups.Find(Id);
             db.Groups.Remove(group);
             db.Groups.Add(model);

@@ -77,18 +77,7 @@ namespace PhoneBook.Attributes
             return CyrilicValidator(value) && NumberValidator(value);
         }
 
-        public bool ArrayReverse(string value)
-        {
-            char[] CharArray = value.ToCharArray();
-
-            for (int i = 0; i < value.Length; i++)
-            {
-                CharArray[i] = value[value.Length - i-1];
-            }
-            new string(CharArray);
-
-            return !CharArray.Contains(value[0]);
-        }
+       
        
     }
 }
