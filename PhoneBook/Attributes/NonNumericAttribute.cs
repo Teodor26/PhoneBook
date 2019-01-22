@@ -30,9 +30,10 @@ namespace PhoneBook.Attributes
             {
                 if(!string.IsNullOrEmpty(value.ToString()))
                 {                 
-                    //if(NumberCyrilicValidator())                    
-                        return true;
+                    if(NumberCyrilicValidator(strValue) && NumberValidator(strValue) && CyrilicValidator(strValue))                   
+                        return true;                    
                 }
+               
             }          
 
             return false;
@@ -54,6 +55,7 @@ namespace PhoneBook.Attributes
                Validation.Cyrilic,
                new Validator(CyrilicValidator)
                );
+                       
         }
 
         public bool NumberValidator (string value)
@@ -75,6 +77,18 @@ namespace PhoneBook.Attributes
             return CyrilicValidator(value) && NumberValidator(value);
         }
 
+        public bool ArrayReverse(string value)
+        {
+            char[] CharArray = value.ToCharArray();
+
+            for (int i = 0; i < value.Length; i++)
+            {
+                CharArray[i] = value[value.Length - i-1];
+            }
+            new string(CharArray);
+
+            return !CharArray.Contains(value[0]);
+        }
        
     }
 }

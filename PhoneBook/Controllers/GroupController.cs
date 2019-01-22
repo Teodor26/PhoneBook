@@ -16,15 +16,18 @@ namespace PhoneBook.Controllers
             IEnumerable<Groups> groups = db.Groups;
             return View(groups); 
         }
-
+        [AllowAnonymous]
         public ActionResult Additional()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public ActionResult Additional(Groups group)
         {
+            
             if (!ModelState.IsValid)
                 return View(group);
 

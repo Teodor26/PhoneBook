@@ -1,4 +1,5 @@
 ﻿using Phonebook.BusinessLogic.Services;
+using Phonebook.Models.DataModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,26 @@ namespace Phonebook.API.Controllers
             var groups = _groupService.GetList();
 
             return Ok(groups);
+        }
+
+
+        [HttpPost]
+
+        public IHttpActionResult Add([FromBody]Group group)
+        {
+            //if (string.IsNullOrEmpty(group.Name))
+            //    return BadRequest("OOppps");
+
+            //if (!ModelState.IsValid)
+            //    return BadRequest(ModelState);
+
+
+            return Ok();
+        }
+        [HttpGet]
+        public IHttpActionResult GetFake()
+        {
+            return Ok("fake");
         }
     }
 }

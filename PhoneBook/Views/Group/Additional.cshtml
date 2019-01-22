@@ -8,7 +8,9 @@
 
 @using (Html.BeginForm("Additional", "Group", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
+    HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
     @Html.Partial("Partials/_groups")
 
-    <input type="submit" name="Добавить" />
+    //<input type="submit" name="Добавить" />
 }

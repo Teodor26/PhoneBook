@@ -11,8 +11,9 @@ namespace PhoneBook.Models
     public class Groups
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Поле должно быть установлено")]
-        [NonNumeric(ErrorMessage = "Не может начинаться с 1")]
+        [Required]
+        [Display(Name = "Name")]
+        [NonNumeric(ErrorMessage = "Не может начинаться с данного символа")]
         public string Name { get; set; }
     }
 }
