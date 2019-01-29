@@ -16,6 +16,7 @@ namespace PhoneBook.Controllers
         public ActionResult Index()
         {
             IEnumerable<Contact> contacts = db.Contacts;
+            IEnumerable<Phone> phones = db.Phones;
             return View(contacts);
         }
 
