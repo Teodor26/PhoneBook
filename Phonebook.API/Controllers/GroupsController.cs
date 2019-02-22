@@ -22,6 +22,9 @@ namespace Phonebook.API.Controllers
         [HttpGet]
         public IHttpActionResult GetAll()
         {
+
+            string connectionString = @"Data Source = Initial catalog = Integrated Security = User Id=Password";
+
             var groups = _groupService.GetList();
 
             return Ok(groups);
@@ -41,10 +44,11 @@ namespace Phonebook.API.Controllers
 
             return Ok();
         }
-        [HttpGet]
-        public IHttpActionResult GetFake()
-        {
-            return Ok("fake");
-        }
+        //[HttpGet]
+        //public IHttpActionResult GetFake()
+        //{
+        //    return Ok("fake");
+        //}
     }
 }
+ 

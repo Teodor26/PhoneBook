@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Phonebook.API.Filtres;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -30,7 +31,7 @@ namespace Phonebook.API
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            
+            config.Filters.Add(new ZeroDivideHandlerFilter());
         }
     }
 }

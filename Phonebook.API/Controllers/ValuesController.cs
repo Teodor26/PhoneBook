@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Phonebook.API.Filtres;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,9 +11,21 @@ namespace Phonebook.API.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        //[OverrideExceptionFilters]
+        [ZeroDivideHandlerFilter]
+
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+             List<string> result
+                = new List<string>();
+
+            for (int i = 0; i < 100; i++)
+            {
+                result.Add((i/i-i).ToString());
+            }
+            return Ok(result);
+
+            
         }
 
         // GET api/values/5

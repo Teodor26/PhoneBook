@@ -18,11 +18,11 @@ namespace PhoneBook.Controllers
         // GET: Group
 
 
-        public async Task<ActionResult> List()
+        public ActionResult List()
         {
-            //IEnumerable<Groups> groups = db.Groups;
-            var groupsList = await _groupApiService.Getlist();
-           // groupsList = db.Groups;
+            IEnumerable<Groups> groups = db.Groups;
+          //  var groupsList = await _groupApiService.Getlist();
+          var  groupsList = db.Groups;
             return View(groupsList); 
         }
         [AllowAnonymous]
